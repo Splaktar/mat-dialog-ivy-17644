@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './dialog';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dialog-bug';
+  data = [1, 2, 3, 4, 5];
+
+  constructor(private matDialog: MatDialog) { }
+
+  openDialog() {
+    this.matDialog.open(DialogComponent);
+  }
 }
